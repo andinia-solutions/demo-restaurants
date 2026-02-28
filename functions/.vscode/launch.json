@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Run MCP Server (local)",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/lib/local.js",
+      "runtimeArgs": ["--enable-source-maps"],
+      "outFiles": ["${workspaceFolder}/lib/**/*.js"],
+      "sourceMaps": true,
+      "env": {
+        "PORT": "3000"
+      },
+      "console": "integratedTerminal"
+    }
+  ]
+}

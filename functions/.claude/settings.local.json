@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__plugin_firebase_firebase__firebase_get_project",
+      "mcp__plugin_firebase_firebase__firestore_list_collections",
+      "mcp__plugin_firebase_firebase__firebase_list_projects",
+      "mcp__plugin_firebase_firebase__firestore_list_documents",
+      "mcp__plugin_firebase_firebase__firestore_list_databases",
+      "mcp__plugin_firebase_firebase__firestore_add_document"
+    ]
+  }
+}
