@@ -1,3 +1,5 @@
+import { useChat } from '../context/ChatContext'
+
 interface FeaturedDishProps {
     title: string
     description: string
@@ -7,6 +9,8 @@ interface FeaturedDishProps {
 }
 
 export default function FeaturedDish({ title, description, price, image, reverse }: FeaturedDishProps) {
+    const { addToCart } = useChat()
+
     return (
         <section className={`featured-dish section${reverse ? ' reverse' : ''}`}>
             <div className="container">
@@ -16,7 +20,12 @@ export default function FeaturedDish({ title, description, price, image, reverse
                         <span className="featured-dish-badge">🔥 Plato insignia</span>
                         <h2 className="featured-dish-title">{title}</h2>
                         <p className="featured-dish-desc">{description}</p>
-                        <span className="featured-dish-price">{price}</span>
+                        <div className="featured-dish-footer">
+                            <span className="featured-dish-price">{price}</span>
+                            <button className="menu-card-btn pedir" onClick={() => addToCart(title)}>
+                                Pedir
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

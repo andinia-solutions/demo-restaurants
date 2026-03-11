@@ -4,7 +4,6 @@ export default function Footer() {
             <div className="container">
                 <div className="footer-grid">
                     <div className="footer-brand">
-                        <img src="/images/logo-horizontal.png" alt="Andino Restobar" className="footer-logo" />
                         <p className="footer-tagline">
                             Cocina serrana y patagónica inteligente en un ambiente premium y acogedor.
                             Fuego real. Producto noble. Experiencia pensada.
@@ -31,10 +30,9 @@ export default function Footer() {
                     <div className="footer-col">
                         <h4>Contacto</h4>
                         <ul>
-                            <li><a href="tel:+541234567890">+54 123 456 7890</a></li>
-                            <li><a href="mailto:aandino@gmail.com">aandino@gmail.com</a></li>
-                            <li><a href="#">Avenida Argentina 1234</a></li>
-                            <li><a href="#">Neuquén Capital</a></li>
+                            <li><a href="tel:+5492995061329">2995061329</a></li>
+                            <li><a href="mailto:team@andinia.solutions">team@andinia.solutions</a></li>
+                            <li><a href="https://www.google.com/maps/dir//Avenida+Argentina+1234+Neuqu%C3%A9n" target="_blank">Avenida Argentina 1234, Neuquén Capital</a></li>
                         </ul>
                     </div>
 

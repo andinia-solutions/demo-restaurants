@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useChat } from '../context/ChatContext'
 
 interface MenuItem {
     name: string
@@ -6,7 +7,6 @@ interface MenuItem {
     price: string
     image: string
     category: 'Entrada' | 'Principal' | 'Postre'
-    btnType: 'pedir' | 'sumar'
 }
 
 const menuItems: MenuItem[] = [
@@ -16,7 +16,6 @@ const menuItems: MenuItem[] = [
         price: '$33.900',
         image: '/images/ojo-de-bife.png',
         category: 'Principal',
-        btnType: 'pedir',
     },
     {
         name: 'Trucha a la Manteca Negra',
@@ -24,7 +23,6 @@ const menuItems: MenuItem[] = [
         price: '$29.900',
         image: '/images/trucha.png',
         category: 'Principal',
-        btnType: 'pedir',
     },
     {
         name: 'Empanadas de Cordero',
@@ -32,7 +30,6 @@ const menuItems: MenuItem[] = [
         price: '$4.900',
         image: '/images/empanadas.png',
         category: 'Entrada',
-        btnType: 'sumar',
     },
     {
         name: 'Provoleta Andina',
@@ -40,7 +37,6 @@ const menuItems: MenuItem[] = [
         price: '$12.900',
         image: '/images/provoleta.png',
         category: 'Entrada',
-        btnType: 'pedir',
     },
     {
         name: 'Volcán de Chocolate',
@@ -48,7 +44,6 @@ const menuItems: MenuItem[] = [
         price: '$9.900',
         image: '/images/ojo-de-bife.png',
         category: 'Postre',
-        btnType: 'pedir',
     },
     {
         name: 'Flan Casero de Campo',
@@ -56,7 +51,6 @@ const menuItems: MenuItem[] = [
         price: '$7.900',
         image: '/images/provoleta.png',
         category: 'Postre',
-        btnType: 'sumar',
     },
 ]
 
@@ -64,6 +58,8 @@ type TabType = 'Todos' | 'Entrada' | 'Principal' | 'Postre'
 
 export default function MenuHighlights() {
     const [activeTab, setActiveTab] = useState<TabType>('Todos')
+    const { addToCart } = useChat()
+
     const tabs: TabType[] = ['Todos', 'Entrada', 'Principal', 'Postre']
 
     const filtered = activeTab === 'Todos'
@@ -102,8 +98,8 @@ export default function MenuHighlights() {
                                 <p className="menu-card-desc">{item.desc}</p>
                                 <div className="menu-card-footer">
                                     <span className="menu-card-price">{item.price}</span>
-                                    <button className={`menu-card-btn ${item.btnType}`}>
-                                        {item.btnType === 'pedir' ? 'Pedir' : 'Sumar'}
+                                    <button className="menu-card-btn pedir" onClick={() => addToCart(item.name)}>
+                                        Pedir
                                     </button>
                                 </div>
                             </div>

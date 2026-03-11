@@ -29,14 +29,6 @@ export default function WhatsAppWidget() {
                     <p>Hacé tu pedido al instante con nuestro agente IA por llamada o chat</p>
                     <div className="whatsapp-tooltip-buttons">
                         <a href="tel:+5491234567890" className="btn btn-primary btn-sm">Llamar</a>
-                        <a
-                            href="https://wa.me/5491234567890"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn btn-outline btn-sm"
-                        >
-                            Chat
-                        </a>
                     </div>
                 </div>
             )}

@@ -1,4 +1,7 @@
+import { useChat } from '../context/ChatContext'
+
 export default function AIExperience() {
+    const { openChat } = useChat()
     const features = [
         'Disponibilidad real',
         'Reservas inmediatas',
@@ -60,8 +63,7 @@ export default function AIExperience() {
                     </div>
 
                     <div className="ai-experience-buttons">
-                        <a href="#reservar" className="btn btn-primary">Hablar con el asistente</a>
-                        <a href="#" className="btn btn-outline">Pedir para retirar</a>
+                        <button onClick={() => openChat()} className="btn btn-primary">Hablar con el asistente</button>
                     </div>
                 </div>
             </div>

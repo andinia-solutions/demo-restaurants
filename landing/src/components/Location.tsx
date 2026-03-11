@@ -13,7 +13,7 @@ export default function Location() {
                 </div>
 
                 <div className="location-content">
-                    <h2>Locación</h2>
+                    <h2>Ubicación</h2>
                     <div className="location-info">
                         <div className="location-info-item">
                             <div className="location-info-icon">📍</div>
@@ -53,7 +53,7 @@ export default function Location() {
                         >
                             Cómo llegar
                         </a>
-                        <a href="tel:+5491234567890" className="btn btn-outline">Llamar</a>
+                        <a href="tel:+5492995061329" className="btn btn-outline">Llamar</a>
                     </div>
                 </div>
             </div>

@@ -43,7 +43,7 @@ export default function Testimonials() {
         <section className="testimonials section" id="testimonios">
             <div className="container">
                 <div className="testimonials-header">
-                    <h2 className="section-title">Testimonials</h2>
+                    <h2 className="section-title">Reseñas</h2>
                 </div>
 
                 <div className="testimonials-carousel">

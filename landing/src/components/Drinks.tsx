@@ -46,24 +46,7 @@ export default function Drinks() {
                             <span className="drink-item-name">Vermut de la Casa</span>
                             <span className="drink-item-price">$8.900</span>
                         </div>
-                    </div>
-
-                    <div className="drink-category">
-                        <div className="drink-category-icon">🥤</div>
-                        <h3>Sin Alcohol</h3>
-                        <div className="drink-item">
-                            <span className="drink-item-name">Limonada artesanal</span>
-                            <span className="drink-item-price">$5.900</span>
-                        </div>
-                        <div className="drink-item">
-                            <span className="drink-item-name">Gaseosas</span>
-                            <span className="drink-item-price">$3.900</span>
-                        </div>
-                        <div className="drink-item">
-                            <span className="drink-item-name">Agua mineral</span>
-                            <span className="drink-item-price">$3.500</span>
-                        </div>
-                    </div>
+                    </div>  
                 </div>
             </div>
         </section>

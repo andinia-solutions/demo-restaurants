@@ -8,11 +8,12 @@ import AIExperience from './components/AIExperience'
 import Drinks from './components/Drinks'
 import Location from './components/Location'
 import Footer from './components/Footer'
-import WhatsAppWidget from './components/WhatsAppWidget'
+import ChatkitWidget from './components/ChatkitWidget'
+import { ChatProvider } from './context/ChatContext'
 
 export default function App() {
     return (
-        <>
+        <ChatProvider>
             <Navbar />
             <Hero />
             <Experience />
@@ -35,7 +36,7 @@ export default function App() {
             <AIExperience />
             <Location />
             <Footer />
-            <WhatsAppWidget />
-        </>
+            <ChatkitWidget />
+        </ChatProvider>
     )
 }
