@@ -10,6 +10,7 @@ import Location from './components/Location'
 import Footer from './components/Footer'
 import ChatkitWidget from './components/ChatkitWidget'
 import PaymentPage from './components/PaymentPage'
+import DemoModal from './components/DemoModal'
 import { ChatProvider } from './context/ChatContext'
 
 export default function App() {
@@ -42,6 +43,7 @@ export default function App() {
             <Location />
             <Footer />
             <ChatkitWidget />
+            <DemoModal />
         </ChatProvider>
     )
 }
