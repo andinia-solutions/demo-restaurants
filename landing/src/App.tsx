@@ -9,9 +9,14 @@ import Drinks from './components/Drinks'
 import Location from './components/Location'
 import Footer from './components/Footer'
 import ChatkitWidget from './components/ChatkitWidget'
+import PaymentPage from './components/PaymentPage'
 import { ChatProvider } from './context/ChatContext'
 
 export default function App() {
+    if (window.location.pathname === '/orders/pay') {
+        return <PaymentPage />
+    }
+
     return (
         <ChatProvider>
             <Navbar />

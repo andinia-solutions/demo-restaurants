@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useChat } from '../context/ChatContext'
 
 export default function Navbar() {
-    const { openChat, cart, addToCart, removeFromCart, cartTotal } = useChat()
+    const { openChat, cart, addToCart, removeFromCart, clearCart, cartTotal } = useChat()
     const [scrolled, setScrolled] = useState(false)
     const [menuOpen, setMenuOpen] = useState(false)
     const [cartOpen, setCartOpen] = useState(false)
@@ -33,6 +33,7 @@ export default function Navbar() {
         const itemsList = cart.map(c => `${c.quantity}x ${c.name}`).join(', ')
         const message = `Quiero realizar un pedido con los siguientes items: ${itemsList}`
         setCartOpen(false)
+        clearCart()
         openChat(message)
     }
 

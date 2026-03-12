@@ -6,6 +6,7 @@ import { useChat } from '../context/ChatContext';
 // Configure your backend API URL here
 // This endpoint should return { client_secret: string }
 const CHATKIT_API_URL = import.meta.env.VITE_CHATKIT_API_URL!;
+const FRONTEND_URL = import.meta.env.VITE_FRONTEND_URL!;
 
 // LocalStorage keys
 const STORAGE_KEY_EMAIL = 'chatkit_user_email';
@@ -85,9 +86,18 @@ export default function ChatKitWidget() {
 
       switch (toolCall.name) {
         case 'get_user_context': {
+          const now = new Date();
+          const offsetMinutes = -now.getTimezoneOffset();
+          const sign = offsetMinutes >= 0 ? '+' : '-';
+          const pad = (n: number) => String(Math.abs(n)).padStart(2, '0');
+          const offsetStr = `${sign}${pad(Math.floor(offsetMinutes / 60))}:${pad(offsetMinutes % 60)}`;
+          const localISO = new Date(now.getTime() - now.getTimezoneOffset() * 60000)
+            .toISOString()
+            .slice(0, -1) + offsetStr;
           const result = {
-            time: new Date().toISOString(),
-            email: userEmail || 'unknown'
+            time: localISO,
+            email: userEmail || 'unknown',
+            frontend_url: FRONTEND_URL
           };
           return result;
         }
